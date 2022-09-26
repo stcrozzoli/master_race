@@ -1,0 +1,11 @@
+svg{
+    width: 30px;
+    height: 30px;
+    margin-left: 7px;
+    margin-right: 10px;
+}
+
+.boton{
+    display: flex;
+    align-items: center;
+}
