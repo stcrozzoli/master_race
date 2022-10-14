@@ -1,0 +1,46 @@
+.cardDetail{
+    background-color: rgb(255, 111, 111);
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+    height: 450px;
+    padding: 15px;
+    border: 2px solid red;
+}
+
+.tituloDetalle{
+    color:white;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.divImagenPrecio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.precioDetalle{
+    font-size: 1.5rem;
+}
+
+.descripcionDetalle{
+    font-size: 0.8rem;
+}
+
+.div2{
+    display: flex;
+}
+
+.divDescripcionContador{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.contador{
+    margin-top: 25px;
+}

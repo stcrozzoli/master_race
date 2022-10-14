@@ -2,6 +2,7 @@ import pc1 from './imgs/pc1.png'
 import p2 from './imgs/pc2.png'
 import pc3 from './imgs/pc3.png'
 
+
 const productos = [
     {
     id:'1', 
@@ -28,11 +29,24 @@ const productos = [
     }
 ]
 
+
+
+export const obtenerId = (id) => {
+    return new Promise ((resolve)=>{
+        setTimeout(()=>{
+            resolve(productos.find(prod =>{
+                return prod.id === id
+            }))
+        },1000)
+    })
+}
+
+
 export const obtenerProductos = () => {
     return new Promise ((resolve)=>{
         setTimeout(()=>{
             resolve(productos)
-        },500)
+        },1000)
     })
 }
 

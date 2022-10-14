@@ -5,7 +5,7 @@ nav {
     justify-content: space-evenly;
 }
 
-nav button {
+nav button, .button{
     background-color: transparent;
     color: #0E2F56;
     border:3px solid transparent;
@@ -13,6 +13,12 @@ nav button {
     padding: 15px;
     font-size: 2rem;
     box-shadow: 0 0 0 3px #FF304F, 0 0 0 5px #ECECDA, 0 0 0 8px #FF304F;
+    text-decoration: none;
+}
+
+.button:hover{
+    color: #FF304F ;
+    transition: 0.5s;
 }
 
 img{

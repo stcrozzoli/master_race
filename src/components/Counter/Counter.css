@@ -3,4 +3,12 @@
     font-size: 50px;
     width: 80px;
     color: wheat;
+    margin: 15px;
+}
+
+.botonako2{
+    background-color: rgb(255, 88, 88);
+    font-size: 1rem;
+    padding: 3px;
+    color: wheat;
 }

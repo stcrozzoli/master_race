@@ -1,33 +1,30 @@
-import {useEffect, useState} from 'react'
-import { obtenerProductos } from '../../pseudoApi'
+import {useState, useEffect} from 'react'
+import {obtenerProductos} from '../../pseudoApi'
+import ItemList from '../ItemList/ItemList'
 import './ItemListContainer.css'
-
+import Spinner from '../Spinner/Spinner'
 
 const ItemListContainer = () => {
-
     const [productos, setProductos] = useState([])
+    const [cargando, setCargando] = useState(true)
 
     useEffect(()=>{
         obtenerProductos().then(response=>{
-            console.log(response)
             setProductos(response)
+        }).finally(()=>{
+            setCargando(false)
         })
-    },[])
+    }, [])
 
+    if(cargando){
+        return <Spinner />
+    }
 
     return(
-        <div>
-            <h2>Listado Productoss</h2>
+        <div className='contenedorMayor'>
+            <h2 className='h2Listado'>Listado Productos</h2>
             <div className='contenedorTarjetas'>
-                {/* {productos.map(prod=>
-                    <div key={prod.id}className="tarjeta">
-                        <img src={prod.img}></img>
-                        <li className='titulo'>{prod.titulo}</li>
-                        <p className='precio'>${prod.precio}</p>
-                    </div>
-                )} */}
-
-                <ItemListContainer productos = {productos}/>
+                <ItemList productos={productos}/>
             </div>
         </div>
     )

@@ -1,7 +1,7 @@
 import './Counter.css'
 import {useState} from 'react'
 
-const Counter = ({agregarAlCarrito}) => {
+const Counter = () => {
 
     const [contador, setContador] = useState(0)
 
@@ -13,6 +13,9 @@ const Counter = ({agregarAlCarrito}) => {
         contador > 0 ? setContador(contador - 1) : console.log('Has alcanzado el mínimo de items')
     }
 
+    const onAdd = () => {
+        console.log('Se agrego al carrito')
+      }
     return (
         <div>
             <h2>Items</h2>
@@ -21,7 +24,7 @@ const Counter = ({agregarAlCarrito}) => {
                 <button className= 'botonako' onClick={restarContador}>-</button>
                 <button className= 'botonako' onClick={sumarContador}>+</button>
             </div>
-            <button onClick={agregarAlCarrito}>Agregar al carrito</button>
+            <button className= 'botonako2' onClick={onAdd}>Agregar al carrito</button>
         </div>
     )
 }
