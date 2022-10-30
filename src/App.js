@@ -16,8 +16,9 @@ function App() {
         <Navbar />
         <Routes>
           <Route path='/' element= {<ItemListContainer/>}/>
+          <Route path='/category/:categoryId' element= {<ItemListContainer/>}/>
           <Route path='/detail/:idproducto' element= {<ItemDetailContainer/>}/>
-        
+          <Route path= '*' element={<h1>Lo sentimos! No es posible encontrar ese producto</h1>}></Route>
         </Routes>
       </BrowserRouter>
 

@@ -6,12 +6,14 @@ import { Link } from "react-router-dom"
 const Navbar = () => {
     return (
         <nav>
-            <button className='button'>Inicio</button>
-            <Link className='button' to={`/`}>Pc's Armadas</Link>
+            <Link className= 'button' to={`/`}>Inicio</Link>
+
+            <Link className='button' to={'/category/gamer'}>Pc's Gamers</Link>
             <Link to={`/`}>
                 <img src= {logo} />
             </Link>
-            <button className='button'>Componentes</button>
+            <Link className='button' to={'/category/oficina'}>Pc's Oficina</Link>
+     
             <CartWidget />
         </nav>
     )

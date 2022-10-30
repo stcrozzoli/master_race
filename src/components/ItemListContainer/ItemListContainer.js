@@ -1,20 +1,22 @@
 import {useState, useEffect} from 'react'
-import {obtenerProductos} from '../../pseudoApi'
+import {obtenerProductos, obtenerCategoria} from '../../pseudoApi'
 import ItemList from '../ItemList/ItemList'
 import './ItemListContainer.css'
 import Spinner from '../Spinner/Spinner'
+import {useParams} from 'react-router-dom'
 
 const ItemListContainer = () => {
     const [productos, setProductos] = useState([])
     const [cargando, setCargando] = useState(true)
-
+    const {categoryId} = useParams()
     useEffect(()=>{
-        obtenerProductos().then(response=>{
+        const funcCategory = categoryId ? obtenerCategoria : obtenerProductos
+        funcCategory(categoryId).then(response=>{
             setProductos(response)
         }).finally(()=>{
             setCargando(false)
         })
-    }, [])
+    }, [categoryId])
 
     if(cargando){
         return <Spinner />
