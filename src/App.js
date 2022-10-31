@@ -11,21 +11,6 @@ import { CartProvider } from './context/CartContext';
 export const Context = createContext()
 
 function App() {
-  // const [cart, setCart] = useState([])
-  // const addItem = (productToAdd) => {
-  //   if(!isInCart(productToAdd.id)){
-  //     setCart([...cart, productToAdd])
-  //   }
-  //   else {
-  //     console.log('Ya está agregado al carrito de compra')
-  //   }
-  // }
-
-  // const isInCart = (id) => {
-  //   return cart.some(prod => prod.id ===id)
-  // }
-  // console.log(cart)
-
   return (
     <div className="App">
       <CartProvider>
