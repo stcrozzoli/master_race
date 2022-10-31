@@ -10,7 +10,6 @@ const ItemDetailContainer = () => {
    const [detalle, setDetalle] = useState({})
    const [cargando, setCargando] = useState(true)
 
-
    const {idproducto} = useParams()
     useEffect(()=>{
         obtenerId(idproducto).then(detalle =>{

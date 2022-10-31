@@ -1,7 +1,22 @@
 import './ItemDetail.css'
 import Counter from '../../components/Counter/Counter'
+import { Context } from '../../App'
+import { useContext } from 'react'
 
-const ItemDetail = ({id, img, precio, descripcion, titulo}) => {
+const ItemDetail = ({id, img, precio, descripcion, titulo, stock}) => {
+    const [cart, setCart] = useContext(Context)
+
+
+    const onAdd = (cantidad) => {
+        console.log('Se agrego al carrito')
+
+        
+        const productToAdd = {
+            id, titulo, precio, cantidad
+        }
+        setCart([...cart, productToAdd])
+    }
+
     return(
         <div className='cardDetail'>
             <div className='divTitulo'>
@@ -17,9 +32,10 @@ const ItemDetail = ({id, img, precio, descripcion, titulo}) => {
                 <div className='divDescripcionContador'>
                     <p className='descripcionDetalle'>{descripcion}</p>
                     <div className='contador'>
+                    <Counter onAdd={onAdd} stock={stock}/>
 
-                    <Counter />
                     </div>
+
                 </div>
             </div>
         </div>
