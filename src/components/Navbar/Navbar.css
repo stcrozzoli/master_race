@@ -24,3 +24,14 @@ nav button, .button{
 img{
     width: 200px;
 }
+
+.cartWidgett{
+    border-radius: 40px;
+    transition: 0.5s;
+}
+
+.cartWidgett:hover{
+        background-color: rgb(255, 0, 0);
+        color:white
+        
+}

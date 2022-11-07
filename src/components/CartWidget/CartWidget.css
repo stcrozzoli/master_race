@@ -8,4 +8,9 @@ svg{
 .boton{
     display: flex;
     align-items: center;
+    transition: 0.5s;
+}
+
+.boton:hover{
+    color:white
 }

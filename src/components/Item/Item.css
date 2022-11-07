@@ -1,3 +1,9 @@
 .titulo{
     text-decoration: none;
+    color: black;
+    transition: 0.5s;
+}
+
+.titulo:hover{
+    color:red;
 }

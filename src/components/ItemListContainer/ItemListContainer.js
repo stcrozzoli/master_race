@@ -1,18 +1,25 @@
 import {useState, useEffect} from 'react'
-import {obtenerProductos, obtenerCategoria} from '../../pseudoApi'
 import ItemList from '../ItemList/ItemList'
 import './ItemListContainer.css'
 import Spinner from '../Spinner/Spinner'
 import {useParams} from 'react-router-dom'
+import {collection, getDoc, getDocs, query, where} from 'firebase/firestore'
+import { db } from '../../services/firebase'
 
 const ItemListContainer = () => {
     const [productos, setProductos] = useState([])
     const [cargando, setCargando] = useState(true)
     const {categoryId} = useParams()
+
     useEffect(()=>{
-        const funcCategory = categoryId ? obtenerCategoria : obtenerProductos
-        funcCategory(categoryId).then(response=>{
-            setProductos(response)
+        const colecref = categoryId ? query(collection(db,'productos'), where('category', '==', categoryId)) : collection(db,'productos')
+        
+        getDocs(colecref).then(response=>{
+            const productosAdaptados = response.docs.map (doc => {
+                const data = doc.data()
+                return {id: doc.id, ...data}
+            })
+            setProductos(productosAdaptados)
         }).finally(()=>{
             setCargando(false)
         })

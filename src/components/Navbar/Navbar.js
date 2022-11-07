@@ -14,7 +14,9 @@ const Navbar = () => {
             </Link>
             <Link className='button' to={'/category/oficina'}>Pc's Oficina</Link>
      
-            <CartWidget />
+            <Link className='cartWidgett' style={{textDecoration:'none'}} to={`/cart`}>
+              <CartWidget />
+            </Link>
         </nav>
     )
 }

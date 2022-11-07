@@ -4,6 +4,7 @@
     width: 80px;
     color: wheat;
     margin: 15px;
+    transition: 0.5s;
 }
 
 .botonako2{
@@ -11,4 +12,10 @@
     font-size: 1rem;
     padding: 3px;
     color: wheat;
+    transition: 0.5s;
+}
+
+.botonako:hover, .botonako2:hover{
+    background-color: wheat;
+    color: rgb(0, 0, 0);
 }

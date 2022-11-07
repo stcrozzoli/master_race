@@ -5,8 +5,8 @@
 }
 
 .App{
-  height: 100vh;
-  background-image: url(imgs/wallpaper.jpg);
+  min-height: 100vh;
+  background-image: url(./wallpaper/wallpaper.jpg);
   background-size: cover;
 }
 
