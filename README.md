@@ -9,10 +9,10 @@ $ npm start
 Coleccion: ‘productos’</p>
 <p class="has-line-data" data-line-start="13" data-line-end="22">Docs:<br>
 {<br>
-category:’’,<br>
-titulo:’’,<br>
-descripcion:’’,<br>
-precio:,<br>
-stock: ,<br>
-img: ‘’<br>
+category&quot;&quot;,<br>
+descripcion:&quot;&quot;,<br>
+img:&quot;&quot;,<br>
+precio: number,<br>
+stock: number,<br>
+titulo: “”,<br>
 }</p>
